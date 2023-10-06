@@ -1,4 +1,4 @@
-POST http://localhost:8080/videos
+POST http://localhost:1000/videos
 Content-Type: application/json
 
 {
@@ -9,19 +9,19 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:8080/videos?search=node
+GET http://localhost:1000/videos
 
 ###
 
-PUT http://localhost:8080/videos/2c7c0563-cef9-4af9-848e-d74afd205300
+PUT http://localhost:1000/videos/aa17630f-61b3-42af-b44e-496d8634d145
 Content-Type: application/json
 
 {
-   "title": "vídeo 02",
-   "description": "Essse é o primeiro vídeo",
-   "duration": 320
+   "title": "vídeo node with postgres",
+   "description": "This video is about node",
+   "duration": 250
 }
 
 ###
 
-DELETE http://localhost:8080/videos/9865a27f-b5a8-4e81-bd02-5b7a7379f481
+DELETE http://localhost:1000/videos/8ec3a6fd-c992-4ee2-9abc-15f3bce0f589

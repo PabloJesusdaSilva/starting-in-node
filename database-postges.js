@@ -3,12 +3,12 @@ import { sql } from './db.js';
 
 export class DatabasePostgres {
    async list(search) {
-      let videos 
+      let videos;
 
       if(search) {
-         videos = await sql`selected * from videos where title "${'%' + search + '%'}"`;
+         videos = await sql`select * from videos where title ilike "${'%' + search + '%'}"`;
       } else {
-         videos = await sql`selected * from videos`;
+         videos = await sql`select * from videos`;
       }
 
       return videos;
@@ -16,15 +16,15 @@ export class DatabasePostgres {
 
    async create(video) {
       let videoId = randomUUID();
-      const { title, description, duration } = videos;
+      const { title, description, duration } = video;
       
       await sql `insert into videos (id, title, description, duration) VALUES (${videoId}, ${title}, ${description}, ${duration})`;
    }
    
    async update(id, video) {
-      const { title, description, duration } = videos;
+      const { title, description, duration } = video;
       
-      await sql `uptade videos set title = ${title}, description = ${description}, duration = ${duration} WHERE id = ${id}`
+      await sql `update videos set title = ${title}, description = ${description}, duration = ${duration} WHERE id = ${id}`
    }
 
    async delete(id) {
