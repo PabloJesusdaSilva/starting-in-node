@@ -7,6 +7,4 @@ sql `
       description TEXT,
       duration    INTEGER
    );
-`.then(() => {
-   console.log('ok')
-})
+`

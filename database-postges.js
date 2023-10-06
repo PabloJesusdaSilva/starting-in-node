@@ -5,7 +5,7 @@ export class DatabasePostgres {
    async list(search) {
       let videos 
 
-      if(sheach) {
+      if(search) {
          videos = await sql`selected * from videos where title "${'%' + search + '%'}"`;
       } else {
          videos = await sql`selected * from videos`;
